@@ -1,2 +1,1 @@
-# Snake-game
-Development of a snake game using turtle documentation
+Arcade snake game using  python turtle documentation
