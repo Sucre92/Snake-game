@@ -24,7 +24,7 @@ screen.onkey(snake.right,"Right")
 is_game_on= True
 while is_game_on:
     screen.update()
-    time.sleep(0.5)
+    time.sleep(0.1)
     snake.move()
 
     if snake.head.distance(food)<15:
@@ -35,6 +35,7 @@ while is_game_on:
             or snake.head.ycor() <-280 or snake.head.ycor()>280:
         is_game_on=False
         messagebox.showinfo("GAME OVER: You lose")
+        screen.bye()
 
 
 
