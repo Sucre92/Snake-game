@@ -1,11 +1,14 @@
 from turtle import Screen,Turtle
-
+import pygame
 distance=20
 starting_pos=[(0,0),(-20,0),(-40,0)]
 RIGHT=0
 UP=90
 LEFT=180
 DOWN=270
+
+pygame.init()
+pygame.mixer.init()
 
 class Snake:
     def __init__(self):
@@ -19,7 +22,7 @@ class Snake:
 
     def add_segment(self,position):
         new_seg = Turtle("square")
-        new_seg.color("white")
+        new_seg.color("grey")
         new_seg.penup()
         new_seg.goto(position)
         self.segments.append(new_seg)
@@ -49,6 +52,9 @@ class Snake:
     def right(self):
         if self.head.heading() != LEFT:
             self.head.setheading(0)
+    def hiss_sound(self):
+        hiss_sound=pygame.mixer.Sound(r'snake-hiss\snake-hiss.mp3')
+        hiss_sound.play()
 
 
 
